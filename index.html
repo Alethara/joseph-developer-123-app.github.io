@@ -759,6 +759,40 @@
             .scroll-indicator { display: none; } /* Hide on mobile to save space */
         }
 
+
+        /* Mobile menu (hamburger) */
+        .mobile-menu-btn { padding: 8px 0; }
+        .mobile-menu-btn span { transform-origin: center; }
+        .navbar.menu-open .mobile-menu-btn span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .navbar.menu-open .mobile-menu-btn span:nth-child(2) { opacity: 0; }
+        .navbar.menu-open .mobile-menu-btn span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+        @media (max-width: 768px) {
+            .navbar.menu-open { background-color: #FFFFFF; }
+            .navbar.menu-open .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                width: 100%;
+                background-color: #FFFFFF;
+                padding: 0.5rem var(--spacing-md) 1rem;
+                border-top: 1px solid var(--col-border);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            }
+            .navbar.menu-open .nav-links li { width: 100%; }
+            .navbar.menu-open .nav-link {
+                display: block;
+                padding: 1rem 0;
+                font-size: 1.05rem;
+                border-bottom: 1px solid var(--col-border);
+            }
+            .navbar.menu-open .nav-links li:last-child .nav-link { border-bottom: none; }
+        }
+
         .logo-io {
             color: var(--col-brand-green);
         }
@@ -770,7 +804,7 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar-inner">
 <a href="#" class="logo">Slotboost<span class="logo-io">.io</span></a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#roi" class="nav-link">Results</a></li>
@@ -778,7 +812,7 @@
 
             <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
                 <a href="#waitlist" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Join Waitlist</a>
-                <div class="mobile-menu-btn">
+                <div class="mobile-menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
                     <span></span><span></span><span></span>
                 </div>
             </div>
@@ -794,10 +828,11 @@
             <!-- Waitlist Form -->
             <div class="waitlist-wrapper" id="waitlist">
                 <p class="waitlist-context">Join the waitlist to get early access and founding-member pricing.</p>
-                <form class="waitlist-form js-waitlist-form" action="https://formsubmit.co/ajax/joseph@slotboost.io" method="POST">
+                <form class="waitlist-form js-waitlist-form" action="https://formsubmit.co/joseph@slotboost.io" method="POST">
                     <input type="hidden" name="_subject" value="New Slotboost Waitlist Signup">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://slotboost.io/?waitlist=joined#waitlist">
+                    <input type="hidden" name="_autoresponse" value="Thanks for joining the Slotboost.io waitlist. You are on the list for early access and founding-member pricing, and we will email you as soon as spots open. Slotboost.io brings lapsed patients back to your clinic with consent-checked texts and emails, and shows you the revenue recovered. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-row">
                         <input type="email" name="email" class="form-input" placeholder="Email address" required aria-label="Email address">
@@ -943,10 +978,11 @@
 
             <div class="waitlist-wrapper">
                 <p class="waitlist-context">Join the waitlist to get early access and founding-member pricing.</p>
-                <form class="waitlist-form js-waitlist-form" action="https://formsubmit.co/ajax/joseph@slotboost.io" method="POST">
+                <form class="waitlist-form js-waitlist-form" action="https://formsubmit.co/joseph@slotboost.io" method="POST">
                     <input type="hidden" name="_subject" value="New Slotboost Waitlist Signup">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://slotboost.io/?waitlist=joined#waitlist">
+                    <input type="hidden" name="_autoresponse" value="Thanks for joining the Slotboost.io waitlist. You are on the list for early access and founding-member pricing, and we will email you as soon as spots open. Slotboost.io brings lapsed patients back to your clinic with consent-checked texts and emails, and shows you the revenue recovered. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
                     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-row">
                         <input type="email" name="email" class="form-input" placeholder="Email address" required aria-label="Email address">
@@ -1006,6 +1042,27 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
+            // 0. Mobile menu (hamburger)
+            const menuBtn = document.getElementById('menuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const setMenu = (open) => {
+                document.getElementById('navbar').classList.toggle('menu-open', open);
+                menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            };
+            const isOpen = () => document.getElementById('navbar').classList.contains('menu-open');
+            menuBtn.addEventListener('click', () => setMenu(!isOpen()));
+            menuBtn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMenu(!isOpen()); }
+            });
+            navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.querySelectorAll('.nav-actions a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('click', (e) => {
+                if (isOpen() && !document.getElementById('navbar').contains(e.target)) setMenu(false);
+            });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+            window.addEventListener('resize', () => { if (window.innerWidth > 768) setMenu(false); });
+
             // 1. Navbar Scroll Effect (Subtle shadow on scroll)
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
@@ -1036,53 +1093,27 @@
                 revealOnScroll.observe(el);
             });
 
-            // 3. Form Handling (Real submission via FormSubmit)
-            const forms = document.querySelectorAll('.js-waitlist-form');
-            
-            forms.forEach(form => {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault(); // Prevent page reload
-
+            // 3. Waitlist forms: normal POST to FormSubmit (needed for the automatic reply).
+            //    FormSubmit emails the signup to joseph@slotboost.io, emails the visitor
+            //    the auto-reply, then sends them back here with ?waitlist=joined.
+            document.querySelectorAll('.js-waitlist-form').forEach(form => {
+                form.addEventListener('submit', () => {
                     const btn = form.querySelector('button[type="submit"]');
-                    const successMsg = form.querySelector('.js-form-success');
-                    const inputs = form.querySelectorAll('.form-input');
-
-                    // Basic loading state
-                    const originalText = btn.textContent;
                     btn.textContent = 'Securing spot...';
                     btn.style.opacity = '0.8';
-                    btn.disabled = true;
-
-                    try {
-                        const response = await fetch(form.action, {
-                            method: 'POST',
-                            body: new FormData(form),
-                            headers: { 'Accept': 'application/json' }
-                        });
-
-                        if (!response.ok) throw new Error('Submission failed');
-
-                        // Clear inputs
-                        inputs.forEach(input => input.value = '');
-
-                        // Show success message
-                        successMsg.style.display = 'block';
-
-                        // Hide after 5 seconds
-                        setTimeout(() => {
-                            successMsg.style.display = 'none';
-                        }, 5000);
-
-                    } catch (err) {
-                        alert("Something went wrong submitting the form. Please try again or email us directly.");
-                        console.error(err);
-                    } finally {
-                        btn.textContent = originalText;
-                        btn.style.opacity = '1';
-                        btn.disabled = false;
-                    }
+                    // Disable after the submit has started, so the form data still sends
+                    setTimeout(() => { btn.disabled = true; }, 0);
                 });
             });
+
+            if (new URLSearchParams(window.location.search).get('waitlist') === 'joined') {
+                document.querySelectorAll('.js-form-success').forEach(msg => {
+                    msg.textContent = "Thanks! You're on the list. Check your inbox for a confirmation email.";
+                    msg.style.display = 'block';
+                });
+                const target = document.getElementById('waitlist');
+                if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
+            }
 
             // 4. Smooth Scrolling for Anchor Links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {

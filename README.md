@@ -1,2 +1,2 @@
 # joseph-developer-123-app.github.io
-App Website
+Marketing site for the app, found at slotboost.io

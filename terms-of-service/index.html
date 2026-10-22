@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms of Service | Slotboost.io</title>
+    <meta name="description" content="The terms that apply to using the Slotboost.io website, joining the waitlist and using the Slotboost patient reactivation service.">
+    <meta name="author" content="Slotboost.io">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://slotboost.io/terms-of-service">
+
+    <meta property="og:title" content="Terms of Service | Slotboost.io">
+    <meta property="og:description" content="The terms that apply to using Slotboost.io.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://slotboost.io/terms-of-service">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-heading: 'Source Serif 4', serif;
+            --font-body: 'Figtree', sans-serif;
+            --fw-heading: 400;
+            --fw-body: 300;
+            --fw-body-bold: 500;
+
+            --col-bg: #FCFCFC;
+            --col-surface: #FFFFFF;
+            --col-text-main: #1A1A1A;
+            --col-text-muted: #595959;
+            --col-text-light: #8C8C8C;
+            --col-border: #E5E5E5;
+            --col-brand-green: #0A7A44;
+            --col-brand-green-hover: #086336;
+
+            --nav-height: 80px;
+            --container-width: 1200px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.05);
+            --trans-fast: 0.2s ease;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: var(--fw-body);
+            color: var(--col-text-main);
+            background-color: var(--col-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: var(--fw-heading);
+            line-height: 1.15;
+            color: var(--col-text-main);
+            letter-spacing: -0.02em;
+        }
+
+        p { margin-bottom: var(--spacing-sm); color: var(--col-text-muted); }
+        a { color: inherit; text-decoration: none; transition: color var(--trans-fast); }
+        a:hover { color: var(--col-brand-green); }
+        ul { list-style: none; }
+
+        .container { width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 var(--spacing-md); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            transition: all var(--trans-fast);
+            text-decoration: none;
+        }
+        .btn-primary { background-color: var(--col-brand-green); color: var(--col-surface); }
+        .btn-primary:hover { background-color: var(--col-brand-green-hover); color: var(--col-surface); transform: translateY(-1px); }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-nav);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: var(--fw-heading);
+            color: var(--col-text-main);
+            letter-spacing: -0.03em;
+        }
+        .logo-io { color: var(--col-brand-green); }
+
+        /* Policy content */
+        .policy {
+            padding: calc(var(--nav-height) + var(--spacing-lg)) 0 var(--spacing-lg);
+        }
+        .policy-inner { max-width: 760px; margin: 0 auto; }
+        .policy h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: var(--spacing-xs); }
+        .policy-updated { font-size: 0.95rem; color: var(--col-text-light); margin-bottom: var(--spacing-md); }
+        .policy h2 {
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+        .policy p, .policy li { font-size: 1.05rem; }
+        .policy ul { margin: 0 0 var(--spacing-sm) 0; }
+        .policy ul li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--col-text-muted);
+        }
+        .policy ul li::before {
+            content: '';
+            position: absolute;
+            left: 0.2rem;
+            top: 0.75em;
+            width: 5px;
+            height: 5px;
+            background: var(--col-brand-green);
+        }
+        .policy strong { font-weight: var(--fw-body-bold); color: var(--col-text-main); }
+        .policy a:not(.btn) { color: var(--col-brand-green); border-bottom: 1px solid rgba(10, 122, 68, 0.3); }
+        .policy a:not(.btn):hover { border-bottom-color: var(--col-brand-green); }
+
+        /* Footer */
+        .footer {
+            background-color: var(--col-surface);
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            border-top: 1px solid var(--col-border);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        .footer-brand .logo { margin-bottom: var(--spacing-sm); display: block; }
+        .footer-address { font-size: 0.9rem; color: var(--col-text-light); line-height: 1.6; margin-top: var(--spacing-sm); }
+        .footer-heading {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: var(--fw-body-bold);
+            color: var(--col-text-main);
+            margin-bottom: var(--spacing-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .footer-links li { margin-bottom: var(--spacing-xs); }
+        .footer-links a { font-size: 0.9rem; color: var(--col-text-muted); }
+        .footer-links a:hover { color: var(--col-brand-green); }
+        .footer-bottom {
+            border-top: 1px solid var(--col-border);
+            padding-top: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--col-text-light);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--spacing-sm); }
+            .footer-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+            .footer-bottom { flex-direction: column; gap: var(--spacing-sm); text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="logo">Slotboost<span class="logo-io">.io</span></a>
+            <a href="/#waitlist" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <!-- TERMS OF SERVICE -->
+    <main class="policy">
+        <div class="container">
+            <div class="policy-inner">
+                <h1>Terms of Service</h1>
+                <p class="policy-updated">Last updated: 22 October 2026</p>
+
+                <p>These terms ("Terms") apply to your use of the Slotboost.io website and the Slotboost patient reactivation service (together, the "Service"). Slotboost.io is operated by Alethara Ltd, a company registered in England and Wales, with its registered office at 128 City Road, London, EC1V 2NX, UK ("Slotboost", "we", "us"). By using the website, joining our waitlist or using the Service, you agree to these Terms. If you do not agree, please do not use the Service.</p>
+
+                <h2>1. Who these Terms apply to</h2>
+                <p>The Service is built for businesses, mainly US medspas and clinics ("clinics"). If you use the Service for a clinic, you confirm that you are authorised to accept these Terms on the clinic's behalf, and "you" means the clinic. If the clinic signs an order form or a separate written agreement with us, that agreement applies together with these Terms, and if the two conflict, the written agreement prevails.</p>
+                <p>These Terms do not form a contract with patients. Patients who receive messages from a clinic through Slotboost should read our <a href="/privacy-policy">Privacy Policy</a> and contact their clinic with any questions.</p>
+
+                <h2>2. Waitlist and early access</h2>
+                <ul>
+                    <li>Joining the waitlist does not oblige you or us to enter into any agreement. It lets us tell you when early access opens.</li>
+                    <li>Any founding-member pricing or early-access terms we describe are subject to confirmation when you sign up for the Service.</li>
+                    <li>The Service is in development. Features, pricing and availability may change before and after launch.</li>
+                    <li>Please do not enter patient information or other sensitive information in the waitlist form. It asks only for an email address and clinic name.</li>
+                </ul>
+
+                <h2>3. The Service</h2>
+                <p>Slotboost helps clinics identify patients who have not returned, send them consent-checked text and email messages on the clinic's behalf, and report on the bookings and revenue that follow. We provide the tools, and the clinic decides who is contacted and what is sent.</p>
+
+                <h2>4. Your account</h2>
+                <ul>
+                    <li>Give us accurate information and keep it up to date.</li>
+                    <li>Keep your login details secure, and tell us promptly if you think someone else has access.</li>
+                    <li>You are responsible for everything done through your account and by the people you allow to use it.</li>
+                </ul>
+
+                <h2>5. Patient information, consent and compliance</h2>
+                <p>The clinic is responsible for the patient information it provides and for how it uses the Service. By using the Service, you confirm that:</p>
+                <ul>
+                    <li>You have the right to upload the information and to contact each patient by text and email.</li>
+                    <li>You hold, and will keep accurate, the consent records needed to send those messages, and you will not upload anyone who has opted out or has not agreed to be contacted.</li>
+                    <li>You will comply with the laws that apply to your messages and your patients' information, which may include HIPAA, the Telephone Consumer Protection Act, the CAN-SPAM Act and state laws.</li>
+                </ul>
+                <p>Slotboost processes patient information only to provide the Service to the clinic that supplied it, as described in our <a href="/privacy-policy">Privacy Policy</a>. Where a clinic is a HIPAA covered entity and the Service will handle protected health information, the clinic and Slotboost will sign a business associate agreement first. We may decline to process, or may pause processing of, protected health information until that agreement is in place.</p>
+
+                <h2>6. Text and email messages</h2>
+                <ul>
+                    <li>Messages are sent on behalf of a clinic and only to patients the clinic's consent records allow it to contact.</li>
+                    <li>Patients can opt out of texts at any time by replying STOP, and can reply HELP for assistance. Opt-outs are applied immediately. Patients can opt out of emails using the unsubscribe link or by contacting the clinic.</li>
+                    <li>How often a patient receives messages depends on the clinic's campaign. Message and data rates may apply, depending on the patient's mobile plan.</li>
+                    <li>We cannot guarantee delivery. Mobile carriers and email providers may delay, filter or block messages, and carriers are not liable for delayed or undelivered messages.</li>
+                    <li>We may pause or limit sending if we believe it is needed to comply with the law, to follow carrier or provider rules, or to protect recipients or the Service, for example if complaints or bounces are high.</li>
+                </ul>
+
+                <h2>7. Acceptable use</h2>
+                <p>You must not use the Service to:</p>
+                <ul>
+                    <li>Send messages to people who have not agreed to receive them, or use purchased or scraped contact lists.</li>
+                    <li>Send anything unlawful, deceptive, harassing or misleading, or impersonate another person or business.</li>
+                    <li>Send messages that are not connected to the clinic's own patients and services.</li>
+                    <li>Interfere with, probe or attempt to break the security of the Service, or reverse engineer it.</li>
+                    <li>Share your login with people outside your clinic or let others use the Service in breach of these Terms.</li>
+                </ul>
+
+                <h2>8. Reports and results</h2>
+                <p>Slotboost reports on contacted patients, bookings and revenue recovered using written rules and the data you provide, such as visit dates and amounts. Reports are only as accurate as that data, and some figures may be estimates. We do not promise any particular number of bookings, any level of revenue or any other result.</p>
+
+                <h2>9. Not medical advice</h2>
+                <p>Slotboost is a software service. We are not a healthcare provider and we do not give medical advice. The clinic is responsible for the content of its messages and for all clinical decisions.</p>
+
+                <h2>10. Fees</h2>
+                <p>If you sign up for a paid plan, the fees and billing terms will be shown to you before you commit, and fees are charged in the currency stated there. Fees do not include taxes unless we say so. We will give you reasonable notice before changing fees for an existing plan.</p>
+
+                <h2>11. Ownership and your data</h2>
+                <p>We own the Service, including its software, design and content. You keep ownership of the information you provide. You give us permission to process that information only as needed to provide and secure the Service and to meet our legal obligations. If you send us feedback or suggestions, we may use them to improve the Service without obligation to you.</p>
+
+                <h2>12. Availability and changes</h2>
+                <p>We aim to keep the Service available but do not promise it will always be uninterrupted or error free. We may change, suspend or stop any part of the Service, and we will give reasonable notice of changes that significantly affect paying customers.</p>
+
+                <h2>13. Suspension and ending</h2>
+                <p>We may suspend or end your access if you breach these Terms, if we reasonably think your use puts recipients, other customers or the Service at risk, or if the law requires. You can stop using the Service at any time, and you can ask us to end your account by emailing us. When the relationship ends, we will delete or return patient information at the clinic's direction, as described in our <a href="/privacy-policy">Privacy Policy</a>, subject to any legal retention requirements.</p>
+
+                <h2>14. Disclaimers</h2>
+                <p>To the fullest extent the law allows, the Service is provided "as is" and "as available", and we do not make any warranty that it will meet your needs, that messages will be delivered, or that it will be free of errors.</p>
+
+                <h2>15. Limit on our liability</h2>
+                <p>Nothing in these Terms limits liability that cannot be limited by law, including liability for death or personal injury caused by negligence and for fraud. Subject to that:</p>
+                <ul>
+                    <li>We are not liable for indirect or consequential loss, or for lost profits, revenue, bookings or data.</li>
+                    <li>Our total liability to you for all claims relating to the Service is limited to the fees you paid us in the 12 months before the claim arose, or &pound;100 if you have not paid us any fees.</li>
+                </ul>
+
+                <h2>16. Your responsibility for claims</h2>
+                <p>You will cover our reasonable losses and costs arising from claims by third parties, such as patients, regulators or carriers, that result from your patient information, your consent records or the content of your messages, or from your breach of these Terms or the law.</p>
+
+                <h2>17. Changes to these Terms</h2>
+                <p>We may update these Terms from time to time. When we do, we will change the "Last updated" date above. If the changes are significant, we will take reasonable steps to let you know. By continuing to use the Service after a change takes effect, you accept the updated Terms.</p>
+
+                <h2>18. General</h2>
+                <p>These Terms, together with any order form or written agreement and our Privacy Policy, are the entire agreement between you and us about the Service. If a part of these Terms is found unenforceable, the rest still applies. You may not transfer your rights under these Terms without our written consent. Our failure to enforce a right is not a waiver of it.</p>
+
+                <h2>19. Governing law</h2>
+                <p>These Terms, and any dispute arising from them or the Service, are governed by the laws of England and Wales, and the courts of England and Wales have exclusive jurisdiction, unless a separate written agreement with us says otherwise.</p>
+
+                <h2>20. Contact us</h2>
+                <p>If you have questions about these Terms, email <a href="mailto:joseph@slotboost.io">joseph@slotboost.io</a> or write to Alethara Ltd, 128 City Road, London, EC1V 2NX, UK.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">Slotboost.io</a>
+                    <p class="text-muted" style="max-width: 300px; font-size: 0.9rem;">Patient reactivation for US medspas and clinics.</p>
+                    <div class="footer-address">
+                        128 City Road,<br>
+                        London, EC1V 2NX,<br>
+                        UK
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://slotboost.io/#how-it-works">How it works</a></li>
+                        <li><a href="https://slotboost.io/#features">Features</a></li>
+                        <li><a href="https://slotboost.io/#roi">Results</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Slotboost.io. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

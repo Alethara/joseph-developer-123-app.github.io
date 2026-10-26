@@ -248,6 +248,15 @@ footer{padding-top:3.5rem}
 .stat b{white-space:nowrap}
 .stat .tag{height:3rem;padding:0 .9rem;white-space:normal;line-height:1.2;font-size:.78rem;border-radius:999px}
 @media(max-width:480px){.stat .tag{height:3.1rem;padding:0 .6rem;font-size:.74rem}}
+/* Above the fold: only navbar + headline, subtitle and waitlist form */
+.hero{min-height:calc(100vh - 70px);min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center;padding:2rem 0}
+.hero-grid{align-items:center}
+.stats-wrap{padding-top:2rem}
+.stats{margin-top:0}
+@media(max-width:860px){.hero{padding:1.5rem 0}.stats{margin-top:0}}
+/* Nudge hero content up */
+.hero{padding:2rem 0 3.5rem}
+@media(max-width:860px){.hero{padding:1.5rem 0 2.5rem}}
 </style>
 </head>
 <body>
@@ -293,6 +302,9 @@ footer{padding-top:3.5rem}
       </div>
     </div>
 
+  </header>
+
+  <div class="stats-wrap">
     <div class="stats">
       <div class="stat"><small>Overdue patients found</small><b>214</b><span class="tag">Eligible: 163</span></div>
       <div class="stat"><small>Contacted</small><b>163</b><span class="tag">Consent checked</span></div>
@@ -300,7 +312,7 @@ footer{padding-top:3.5rem}
       <div class="stat dark"><small>Revenue recovered</small><b>$9,420</b><span class="tag">Completed visits only</span></div>
     </div>
     <p class="note">Example dashboard. Illustrative figures.</p>
-  </header>
+  </div>
 
   <!-- FEATURES -->
   <section id="features">

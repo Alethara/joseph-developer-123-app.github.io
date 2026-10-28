@@ -277,7 +277,7 @@ footer{padding-top:3.5rem}
       <a href="#roi">Results</a>
     </div>
     <div class="nav-cta">
-      <a href="#waitlist" class="btn btn-sm">Join Waitlist</a>
+      <a href="#waitlist" class="btn btn-sm">Apply for the Pilot</a>
       <div class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></div>
     </div>
   </nav>
@@ -291,17 +291,17 @@ footer{padding-top:3.5rem}
       </div>
 
       <div class="wl" id="waitlist">
-        <p class="wl-ctx">Join the waitlist to get early access and founding-member pricing.</p>
+        <p class="wl-ctx">Apply for one of 3 complimentary, 3-month pilot places. We run the patient campaign for you. If it doesn't generate at least $1,000 in booked treatments, we pay you $250.</p>
         <form class="wl-form js-waitlist-form" action="https://formsubmit.co/joseph@slotboost.io" method="POST">
-          <input type="hidden" name="_subject" value="New Slotboost.io Waitlist Signup">
+          <input type="hidden" name="_subject" value="New Slotboost.io Pilot Application">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://slotboost.io/?waitlist=joined#waitlist">
-          <input type="hidden" name="_autoresponse" value="Thanks for joining the Slotboost.io waitlist. You are on the list for early access and founding-member pricing, and we will email you as soon as spots open. Slotboost.io brings lapsed patients back to your clinic with consent-checked texts and emails, and shows you the revenue recovered. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
+          <input type="hidden" name="_autoresponse" value="Thanks for applying to the Slotboost.io pilot. We will review your application and email you shortly to confirm next steps. The pilot is complimentary for 3 months, we run the patient campaign for you, and if it does not generate at least $1,000 in booked treatments we will pay you $250. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="email" name="email" class="field" placeholder="Email address" required aria-label="Email address">
           <input type="text" name="clinic_name" class="field" placeholder="Clinic name" required aria-label="Clinic name">
-          <button type="submit" class="btn btn-green">Join the Waitlist</button>
-          <div class="ok js-form-success">Thanks! You're on the list. We'll be in touch soon.</div>
+          <button type="submit" class="btn btn-green">Apply for the Pilot</button>
+          <div class="ok js-form-success">Thanks! Your pilot application is in. We'll be in touch soon.</div>
         </form>
       </div>
     </div>
@@ -385,20 +385,20 @@ footer{padding-top:3.5rem}
     <div class="cta reveal">
       <div style="position:relative;z-index:2">
         <h2>Your next appointments are already on your list.</h2>
-        <p>Medspas first, with dental and other medical clinics to follow. Secure your spot on the waitlist.</p>
+        <p>We're opening 3 pilot places for MedSpas. It's complimentary for 3 months, and in return we ask for your honest feedback and a few short conversations to help us improve Slotboost.io.</p>
       </div>
       <div class="wl">
-        <p class="wl-ctx">Join the waitlist to get early access and founding-member pricing.</p>
+        <p class="wl-ctx">Apply for one of 3 complimentary, 3-month pilot places. We run the patient campaign for you. If it doesn't generate at least $1,000 in booked treatments, we pay you $250.</p>
         <form class="wl-form js-waitlist-form" action="https://formsubmit.co/joseph@slotboost.io" method="POST">
-          <input type="hidden" name="_subject" value="New Slotboost.io Waitlist Signup">
+          <input type="hidden" name="_subject" value="New Slotboost.io Pilot Application">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://slotboost.io/?waitlist=joined#waitlist">
-          <input type="hidden" name="_autoresponse" value="Thanks for joining the Slotboost.io waitlist. You are on the list for early access and founding-member pricing, and we will email you as soon as spots open. Slotboost.io brings lapsed patients back to your clinic with consent-checked texts and emails, and shows you the revenue recovered. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
+          <input type="hidden" name="_autoresponse" value="Thanks for applying to the Slotboost.io pilot. We will review your application and email you shortly to confirm next steps. The pilot is complimentary for 3 months, we run the patient campaign for you, and if it does not generate at least $1,000 in booked treatments we will pay you $250. If you have any questions in the meantime, just email joseph@slotboost.io. Joseph, Slotboost.io">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input type="email" name="email" class="field" placeholder="Email address" required aria-label="Email address">
           <input type="text" name="clinic_name" class="field" placeholder="Clinic name" required aria-label="Clinic name">
-          <button type="submit" class="btn btn-green">Join the Waitlist</button>
-          <div class="ok js-form-success">Thanks! You're on the list.</div>
+          <button type="submit" class="btn btn-green">Apply for the Pilot</button>
+          <div class="ok js-form-success">Thanks! Your pilot application is in.</div>
         </form>
       </div>
     </div>
@@ -427,7 +427,7 @@ footer{padding-top:3.5rem}
 </div>
 </div>
 
-<a href="#waitlist" class="btn btn-green fab">Join Waitlist</a>
+<a href="#waitlist" class="btn btn-green fab">Apply for the Pilot</a>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
@@ -448,12 +448,12 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.js-waitlist-form').forEach(f=>{
     f.addEventListener('submit',()=>{
       const b=f.querySelector('button[type="submit"]');
-      b.textContent='Securing spot...';b.style.opacity='.8';
+      b.textContent='Submitting...';b.style.opacity='.8';
       setTimeout(()=>{b.disabled=true},0);
     });
   });
   if(new URLSearchParams(location.search).get('waitlist')==='joined'){
-    document.querySelectorAll('.js-form-success').forEach(m=>{m.textContent="Thanks! You're on the list. Check your inbox for a confirmation email.";m.style.display='block'});
+    document.querySelectorAll('.js-form-success').forEach(m=>{m.textContent="Thanks! Your pilot application is in. Check your inbox for a confirmation email.";m.style.display='block'});
     const t=document.getElementById('waitlist');
     if(t)setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),300);
   }

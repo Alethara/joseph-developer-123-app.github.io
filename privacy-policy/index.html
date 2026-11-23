@@ -277,6 +277,18 @@ footer{padding-top:3.5rem}
 .doc a:hover{border-bottom-color:var(--green)}
 .doc{overflow-wrap:anywhere}
 .fab{display:inline-flex;opacity:1;pointer-events:auto;transform:none}
+
+/* Login / Sign up */
+.nav-cta{gap:8px}
+.nav-cta .btn{display:inline-flex}
+.btn-login{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-login:hover{background:rgba(20,20,20,.07);color:var(--ink)}
+.wl-btns{display:flex;gap:10px}
+.wl-btns .btn{flex:1}
+.cta .wl-btns .btn-login{background:rgba(255,255,255,.12);color:#fff;box-shadow:none}
+.cta .wl-btns .btn-login:hover{background:rgba(255,255,255,.22)}
+.wl-btns .btn-login{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+@media(max-width:860px){.nav-cta .btn{padding:.5rem .9rem;font-size:.8rem}}
 </style>
 <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -340,7 +352,8 @@ footer{padding-top:3.5rem}
       <a href="/#roi">Results</a>
     </div>
     <div class="nav-cta">
-      <a href="/#waitlist" class="btn btn-sm">Apply for the Pilot</a>
+      <a href="https://app.slotboost.io/signin" class="btn btn-sm btn-login">Log in</a>
+      <a href="https://app.slotboost.io/signup" class="btn btn-sm btn-green">Sign up</a>
       <div class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></div>
     </div>
   </nav>
@@ -437,7 +450,7 @@ footer{padding-top:3.5rem}
 </div>
 </div>
 
-<a href="https://slotboost.io/#waitlist" class="btn btn-green fab">Apply for the Pilot</a>
+<a href="https://slotboost.io/#waitlist" class="btn btn-green fab">Sign up</a>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
